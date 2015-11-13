@@ -1,0 +1,17 @@
+CHANGELOG for RoboSim, 2014
+
+2.0.2: 
+   - Handle reception of a non-unicode character on the control
+     connection by closing the connection rather than throwing an
+     uncaught exception and crashing.
+
+2.0.3:
+   - implement random underreads
+   - Set SO_REUSE_ADDR on control socket to avoid timewait
+   - poll control connection more often (was only 30 ops/sec, now around 120).
+
+2.0.4:
+   - increase max command rate to 150 ops/sec.
+   - now also calculate the encoder values 150 times/sec
+   - fix bug that resulted in motor speeds taking longer than they
+     should to settle to target speed.
